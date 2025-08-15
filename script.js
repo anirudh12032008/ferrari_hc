@@ -2,11 +2,11 @@
   const trackSection = document.getElementById("track");
 
   window.addEventListener("scroll", () => {
-    const rect = trackSection.getBoundingClientRect();
-    const viewHeight = window.innerHeight;
+    const trackSectionRect = trackSection.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
 
-    if (rect.top < viewHeight && rect.bottom > 0) {
-      const percentSeen = Math.min(100, ((viewHeight - rect.top) / (rect.height + viewHeight)) * 100);
+    if (trackSectionRect.top < viewportHeight && trackSectionRect.bottom > 0) {
+      const percentSeen = Math.min(100, ((viewportHeight - trackSectionRect.top) / (trackSectionRect.height + viewportHeight)) * 100);
       progress.style.width = `${percentSeen}%`;
     }
   });

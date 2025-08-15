@@ -13,6 +13,38 @@
     body {
       font-family: 'Orbitron', sans-serif;
     }
+
+    .ferrari-red-accessible {
+      color: #ff6b6b !important;
+    }
+
+    .hero-bg {
+      background-image: url('https://static0.carbuzzimages.com/wordpress/wp-content/uploads/2024/10/ferrari-f80-1.jpg');
+    }
+
+    .flip-card {
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      transform-style: preserve-3d;
+      transition: transform 0.7s;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      backface-visibility: hidden;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+
+    /* --- Animations --- */
     .pulse {
       height: 4px;
       width: 100%;
@@ -29,6 +61,27 @@
       }
       100% {
         opacity: 1;
+      }
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .flip-card {
+        width: 100%;
+        max-width: 320px;
+      }
+      
+      .footer-responsive {
+        font-size: 0.875rem !important;
+        line-height: 1.5;
+        padding: 1.5rem 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-responsive {
+        font-size: 1rem !important; 
+        padding: 2rem 1rem;
       }
     }
   </style>
@@ -48,9 +101,9 @@
   </nav>
 <div class="h-1 w-full pulse"></div>
 
-  <section id="hero" class="h-96 bg-cover bg-center flex items-center justify-center" style="background-image: url('https://static0.carbuzzimages.com/wordpress/wp-content/uploads/2024/10/ferrari-f80-1.jpg');">
+  <section id="hero" class="h-96 bg-cover bg-center flex items-center justify-center hero-bg">
     <div class="bg-black bg-opacity-70 p-6 text-center">
-      <h1 class="text-4xl font-bold text-red-500">FERRARI.</h1>
+      <h1 class="text-4xl font-bold ferrari-red-accessible">FERRARI.</h1>
       <p class="mt-2 text-gray-200">pure speed pure soul</p>
     </div>
   </section>
@@ -58,29 +111,29 @@
 <div class="h-1 w-full pulse"></div>
 
   <section class="p-6">
-    <h2 id="models" class="text-3xl text-center text-red-500 font-bold mb-6">Iconic Models</h2>
+    <h2 id="models" class="text-3xl text-center ferrari-red-accessible font-bold mb-6">Iconic Models</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <div class="bg-gray-800 p-4 rounded">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Red_2019_Ferrari_SF90_Stradale_%2848264238897%29_%28cropped%29.jpg/960px-Red_2019_Ferrari_SF90_Stradale_%2848264238897%29_%28cropped%29.jpg" class="w-full h-48 object-cover">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Red_2019_Ferrari_SF90_Stradale_%2848264238897%29_%28cropped%29.jpg/960px-Red_2019_Ferrari_SF90_Stradale_%2848264238897%29_%28cropped%29.jpg" class="w-full h-48 object-cover" alt="Red Ferrari SF90 Stradale sports car">
         <h3 class="text-xl font-bold mt-2">SF90 Stradale</h3>
-        <p class="text-sm text-gray-300">A 986 HP hybrid monster</p>
+        <p class="text-sm text-gray-200">A 986 HP hybrid monster</p>
       </div>
       <div class="bg-gray-800 p-4 rounded">
-        <img src="https://stimg.cardekho.com/images/carexteriorimages/930x620/Ferrari/296-GTB/9306/1662555237288/front-left-side-47.jpg" class="w-full h-48 object-cover">
+        <img src="https://stimg.cardekho.com/images/carexteriorimages/930x620/Ferrari/296-GTB/9306/1662555237288/front-left-side-47.jpg" class="w-full h-48 object-cover" alt="Ferrari 296 GTB hybrid sports car">
         <h3 class="text-xl font-bold mt-2">296 GTB</h3>
-        <p class="text-sm text-gray-300">brutal with V6 + electric boost</p>
+        <p class="text-sm text-gray-200">brutal with V6 + electric boost</p>
       </div>
       <div class="bg-gray-800 p-4 rounded">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBuWSs3SPhtfxHcVWyInbgwtaVsLeeG8D-Eg&s" class="w-full h-48 object-cover">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBuWSs3SPhtfxHcVWyInbgwtaVsLeeG8D-Eg&s" class="w-full h-48 object-cover" alt="Ferrari Daytona SP3 hypercar">
         <h3 class="text-xl font-bold mt-2">Daytona SP3</h3>
-        <p class="text-sm text-gray-300">Hypermodern guts</p>
+        <p class="text-sm text-gray-200">Hypermodern guts</p>
       </div>
     </div>
   </section>
 <div class="h-1 w-full pulse"></div>
 
   <section class="bg-gray-900 py-10 px-6">
-    <h2 class="text-2xl text-center text-red-400 font-bold mb-6">🏁 Ferrari Milestones</h2>
+    <h2 class="text-2xl text-center text-red-300 font-bold mb-6"> Ferrari Milestones</h2>
     <div class="flex flex-wrap justify-center gap-4 text-center">
       <div class="bg-gray-700 p-4 rounded w-40">
         <h3 class="text-xl">1947</h3>
@@ -97,16 +150,15 @@
     </div>
   </section>
 <div class="h-1 w-full pulse"></div>
-<!-- used internet for this to know how to do this -->
-   <div class="group w-80 h-48 mx-auto [perspective:1000px]">
-    <div class="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+   <div class="flip-card w-80 h-48 mx-auto">
+    <div class="flip-card-inner relative w-full h-full">
       
-      <div class="absolute w-full h-full bg-red-600 text-white text-center p-4 rounded-lg [backface-visibility:hidden]">
+      <div class="flip-card-front absolute w-full h-full bg-red-600 text-white text-center p-4 rounded-lg">
         <h3 class="text-xl font-bold mb-2">V8 Twin Turbo</h3>
         <p class="text-sm">710 HP<br>0 to 100 in 2.9s<br>Top Speed: 340 km/h</p>
       </div>
 
-      <div class="absolute w-full h-full rounded-lg overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
+      <div class="flip-card-back absolute w-full h-full rounded-lg overflow-hidden">
         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Ferrari_488_engine.jpg" class="w-full h-full object-cover" alt="Ferrari Engine">
       </div>
       
@@ -114,11 +166,11 @@
   </div>
 
   <section id="track" class="bg-black py-10 px-6">
-    <h2 class="text-center text-red-500 font-bold text-xl mb-4">🏎️ Track Progress</h2>
+    <h2 class="text-center ferrari-red-accessible font-bold text-xl mb-4">🏎️ Track Progress</h2>
     <div class="w-full max-w-xl mx-auto bg-gray-700 h-6 rounded-full">
       <div id="bar" class="h-full bg-red-500 w-1/2"></div>
     </div>
-    <p class="text-center mt-3 text-sm text-gray-400">Scrolling.....</p>
+    <p class="text-center mt-3 text-sm text-gray-200">Scrolling.....</p>
   </section>
 
   <section class="bg-red-700 py-10 text-center">
@@ -132,21 +184,21 @@
     <div class="space-y-4 max-w-2xl mx-auto">
       <div class="border-l-4 border-red-500 pl-4">
         <h4 class="font-bold text-lg">Can I own one as a student?</h4>
-        <p class="text-gray-400">Only if Hack Club or Elon Musk sponsors you, lol 😅</p>
+        <p class="text-gray-200">Only if Hack Club or Elon Musk sponsors you, lol 😅</p>
       </div>
       <div class="border-l-4 border-red-500 pl-4">
         <h4 class="font-bold text-lg">Which is the fastest Ferrari?</h4>
-        <p class="text-gray-400">Currently the SF90 Stradale which is 0-100 in 2.5s 🚀</p>
+        <p class="text-gray-200">Currently the SF90 Stradale which is 0-100 in 2.5s </p>
       </div>
       <div class="border-l-4 border-red-500 pl-4">
         <h4 class="font-bold text-lg">Is there an electric Ferrari?</h4>
-        <p class="text-gray-400">No But it's coming ⚡</p>
+        <p class="text-gray-200">No But it's coming </p>
       </div>
     </div>
   </section>
 
-  <footer class="bg-black text-center text-gray-400 py-4 text-sm mt-4">
-    Built with love Anirudh Sahu For Hackclub 
+  <footer class="bg-black text-center text-gray-200 py-6 px-4 text-sm sm:text-base footer-responsive mt-4">
+    <p class="font-medium">Built with ❤️ by Anirudh Sahu for Hackclub</p>
   </footer>
 
   <script src="script.js"></script>
